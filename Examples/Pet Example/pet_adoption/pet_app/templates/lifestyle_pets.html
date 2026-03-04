@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Pets for Lifestyle - {{ lifestyle|title }} {% endblock %}
+
+{% block h1 %}
+Pets for lifestyle: {{ lifestyle|title }}
+{% endblock %}
+{% block content %}
+    <div class="max-w-2xl mx-auto">
+
+      {% if matching_pets %}
+        <ul class="space-y-3">
+        {% for pet_type in matching_pets %}
+          <li class="flex items-center justify-between rounded-lg border bg-white p-4">
+            <span class="font-semibold">{{ pet_type|title }}</span>
+
+            <a
+              class="text-blue-600 hover:underline"
+              href="{% url 'pet_type_details' pet_type %}"
+            >
+              View details
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p>No pets match this lifestyle.</p>
+      {% endif %}
+    </div>
+{% endblock %}

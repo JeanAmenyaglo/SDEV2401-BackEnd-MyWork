@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Home - Pet Adoption Matcher {% endblock %}
+
+{% block h1 %}
+Welcome to the Pet Adoption Matcher!
+{% endblock %}
+
+{% block content %}
+    <div class="max-w-2xl mx-auto">
+        <p class="text-lg mb-2">Find your perfect pet match today!</p>
+        <section>
+          <h2 class="text-2xl font-semibold mb-4">Available Pet Types</h2>
+          <ul class="list-disc pl-5">
+          <!--
+              Last class we saw how to loop through a list.
+              Below we loop through a dictionary using the items property.
+              The items property returns a list of tuples, where each tuple is a key-value pair.
+          -->
+          {% for pet_type, pet in pet_types.items %}
+              <li class="mb-2">
+                  <!-- This is the key-->
+                  <a href="{% url 'pet_type_details' pet_type=pet_type %}">
+                    <strong>{{ pet.name }}</strong>
+                    <div>
+                        <!-- This is the which is a dictionary itself -->
+                        {{pet.traits}}
+                    </div>
+                  </a>
+              </li>
+          {% endfor %}
+          </ul>
+      </section>
+      </div>
+{% endblock %}

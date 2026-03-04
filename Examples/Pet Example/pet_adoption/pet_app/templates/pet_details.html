@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Pet Details - {{ pet_type|title }} {% endblock %}
+
+{% block h1 %}
+Is a {{pet_type}} the right match for you?
+{% endblock %}
+{% block content %}
+    <div class="max-w-2xl mx-auto">
+        
+        <section>
+            {% if pet_data %}
+            <h2 class="text-2xl font-semibold mb-4">Pet Details</h2>
+            <p class="text-lg mb-2">
+                The traits of a {{pet_type}} are: {{pet_data.traits}}
+            </p>
+            {% else %}
+            <p class="text-lg mb-2">
+                Sorry, we don't have information about that pet type.
+            </p>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

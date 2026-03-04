@@ -1,0 +1,201 @@
+[
+    {
+        "model": "clients.company",
+        "pk": 1,
+        "fields": {
+            "name": "Bob Inc.",
+            "email": "best@bob.ca",
+            "location": "Bob City",
+            "industry": "Bob Marking",
+            "description": "Talent is a pursued interest. That is to say, anything you practice you can do. This present moment is perfect simply due to the fact you're experiencing it. Just make little strokes like that. Isn't it fantastic that you can change your mind and create all these happy things?\r\n\r\nPaint anything you want on the canvas. Create your own world. This is your creation - and it's just as unique and special as you are. See there how easy that is. Everyone wants to enjoy the good parts - but you have to build the framework first.",
+            "created_at": "2026-02-03T03:03:18.257Z",
+            "updated_at": "2026-02-03T03:03:18.260Z",
+            "website": null,
+            "active": true
+        }
+    },
+    {
+        "model": "clients.company",
+        "pk": 2,
+        "fields": {
+            "name": "Inc Inc.",
+            "email": "genertic@inc.ca",
+            "location": "Valley View",
+            "industry": "Stuff and Things",
+            "description": "Just let go - and fall like a little waterfall. In your world you have total and absolute power. I like to beat the brush. This present moment is perfect simply due to the fact you're experiencing it. In nature, dead trees are just as normal as live trees. Just relax and let it flow. That easy.\r\n\r\nYou could sit here for weeks with your one hair brush trying to do that - or you could do it with one stroke with an almighty brush. And that's when it becomes fun - you don't have to spend your time thinking about what's happening - you just let it happen. The least little bit can do so much. When you do it your way you can go anywhere you choose. Just take out whatever you don't want. It'll change your entire perspective.",
+            "created_at": "2026-02-03T03:03:18.257Z",
+            "updated_at": "2026-02-03T03:03:18.260Z",
+            "website": null,
+            "active": true
+        }
+    },
+    {
+        "model": "clients.company",
+        "pk": 3,
+        "fields": {
+            "name": "Cat Sitting International",
+            "email": "",
+            "location": null,
+            "industry": null,
+            "description": "",
+            "created_at": "2026-02-05T03:06:11.418Z",
+            "updated_at": "2026-02-05T03:06:11.418Z",
+            "website": null,
+            "active": true
+        }
+    },
+    {
+        "model": "clients.role",
+        "pk": 1,
+        "fields": {
+            "name": "Painter",
+            "description": "",
+            "created_at": "2026-02-03T04:38:10.148Z",
+            "updated_at": "2026-02-03T04:38:10.148Z"
+        }
+    },
+    {
+        "model": "clients.role",
+        "pk": 2,
+        "fields": {
+            "name": "Manager",
+            "description": "",
+            "created_at": "2026-02-03T04:38:16.588Z",
+            "updated_at": "2026-02-03T04:38:16.588Z"
+        }
+    },
+    {
+        "model": "clients.role",
+        "pk": 3,
+        "fields": {
+            "name": "Clown",
+            "description": "",
+            "created_at": "2026-02-03T04:38:21.307Z",
+            "updated_at": "2026-02-03T04:38:21.307Z"
+        }
+    },
+    {
+        "model": "clients.role",
+        "pk": 4,
+        "fields": {
+            "name": "CEO",
+            "description": null,
+            "created_at": "2026-02-05T03:06:11.423Z",
+            "updated_at": "2026-02-05T03:06:11.423Z"
+        }
+    },
+    {
+        "model": "clients.role",
+        "pk": 5,
+        "fields": {
+            "name": "Developer",
+            "description": null,
+            "created_at": "2026-02-05T03:06:11.431Z",
+            "updated_at": "2026-02-05T03:06:11.431Z"
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 1,
+        "fields": {
+            "first_name": "Bob",
+            "last_name": "Ross",
+            "email": "bross@awesome.ca",
+            "created_at": "2026-02-03T04:13:02.232Z",
+            "updated_at": "2026-02-03T04:38:36.525Z",
+            "company": 1,
+            "role": 1
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 2,
+        "fields": {
+            "first_name": "Fred",
+            "last_name": "Fredrick",
+            "email": "fred@therealfred.ca",
+            "created_at": "2026-02-03T04:18:30.718Z",
+            "updated_at": "2026-02-03T04:38:43.293Z",
+            "company": 2,
+            "role": 2
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 3,
+        "fields": {
+            "first_name": "Marvin",
+            "last_name": "Marty",
+            "email": "mart@mart.ca",
+            "created_at": "2026-02-03T04:18:49.628Z",
+            "updated_at": "2026-02-03T04:38:48.886Z",
+            "company": 2,
+            "role": 3
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 4,
+        "fields": {
+            "first_name": "Alice",
+            "last_name": "Johnson",
+            "email": "alice.johnson@acmetesting.com",
+            "created_at": "2026-02-05T02:35:33.550Z",
+            "updated_at": "2026-02-05T02:46:35.644Z",
+            "company": 1,
+            "role": 2
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 5,
+        "fields": {
+            "first_name": "Bob",
+            "last_name": "Smith",
+            "email": "bob.smith@acmetesting.com",
+            "created_at": "2026-02-05T02:40:05.416Z",
+            "updated_at": "2026-02-05T02:40:05.416Z",
+            "company": 1,
+            "role": null
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 6,
+        "fields": {
+            "first_name": "Diana",
+            "last_name": "Prince",
+            "email": "diana.prince@catsittesting.com",
+            "created_at": "2026-02-05T03:06:11.426Z",
+            "updated_at": "2026-02-05T03:06:11.426Z",
+            "company": 3,
+            "role": 4
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 7,
+        "fields": {
+            "first_name": "Ethan",
+            "last_name": "Hunt",
+            "email": "ethan.hunt@catsittesting.com",
+            "created_at": "2026-02-05T03:06:11.430Z",
+            "updated_at": "2026-02-05T03:06:11.430Z",
+            "company": 3,
+            "role": 2
+        }
+    },
+    {
+        "model": "clients.employee",
+        "pk": 8,
+        "fields": {
+            "first_name": "Fiona",
+            "last_name": "Green",
+            "email": "fiona.green@catsittesting.com",
+            "created_at": "2026-02-05T03:06:11.432Z",
+            "updated_at": "2026-02-05T03:06:11.432Z",
+            "company": 3,
+            "role": 5
+        }
+    }
+]

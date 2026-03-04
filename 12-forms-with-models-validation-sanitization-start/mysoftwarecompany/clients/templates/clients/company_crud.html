@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    {% if create %}
+    <h1>Create a new Company</h1>
+    {% else %}
+    <h1>Update {{ company.name }} details</h1>
+    {% endif %}
+
+    {% if new_company %}
+    <div class="mt-4 p-4 bg-green-100 text-green-800 border border-green-200 rounded">
+        Company "{{ new_company.name }}" has been created successfully.
+        <a href="{% url 'company_detail' new_company.id %}" class="text-blue-600 underline">
+            View Company Details
+        </a>
+    </div>
+    {% endif %}
+    {% if updated %}
+    <div class="mt-4 p-4 bg-green-100 text-green-800 border border-green-200 rounded">
+        Company "{{ company.name }}" updated successfully.
+        <a href="{% url 'company_detail' company.id %}" class="text-blue-600 underline">
+            View Company Details
+        </a>
+    </div>
+    {% endif %}
+
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <p class="text-red-500">{{ field.errors|striptags }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% if form.non_field_errors %}
+        <div class="mb-4 p-4 bg-red-100 text-red-800 border border-red-200 rounded">
+            <ul>
+                {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

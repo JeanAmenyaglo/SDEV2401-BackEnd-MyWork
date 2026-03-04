@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold underline">
+          List of Company Clients
+        </h1>
+        <!-- New section using jinja templates -->
+        <section>
+            <ul class="list-disc pl-5">
+            {% for company in companies %}
+                <li class="mb-2">
+                    <strong>{{ company.name }}</strong>
+                    <div>
+                        {{company.email}}
+                    </div>
+                    <p>{{company.description}}</p>
+                    <p>Created At: {{company.created_at}}</p>
+                    <p>Updated At: {{company.updated_at}}</p>
+                    <p>Website: {{company.website}}</p>
+                    <label for="active_status">
+                        <input type="checkbox" 
+                                id="active_status"
+                                name="Active" 
+                                {% if company.active %} checked {% endif %} />
+                        Active
+                    </label>
+                    {% for employee in company.employees.all %}
+                    <ul>
+                        <li>{{forloop.counter}}. {{employee.role.name}} {{employee.first_name}} {{employee.last_name}}</li>
+                    </ul>
+                    {% endfor %}
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+    </div>
+{% endblock %}
