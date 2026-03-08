@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-green-600 text-white py-6 mb-8">
+        <h1 class="text-center text-4xl font-bold">Pet Details</h1>
+        <section>
+            {% if pet_data %}
+            <h2 class="text-2xl font-semibold mb-4">Pet Details</h2>
+            <p class="text-lg mb-2">
+                The traits of a {{ pet_type }} are: {{ pet_data.traits }}
+            </p>
+            {% else %}
+            <p class="text-lg mb-2">
+                Sorry, we don't have any information about this pet type.
+            </p>
+            {% endif %}
+        </section>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold underline">
+                Is a {{ pet_type }} the right match for you?
+            </h1>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-blue-600 text-white py-6 mb-8">
+        <h1 class="text-center text-4xl font-bold">Welcome to the Pet Adoption Center</h1>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
+        <section>
+    <h2 class="text-2xl font-semibold mb-4">Available Pet Types</h2>
+    <ul class="list-disc pl-5">
+
+        <!-- Loop through dictionary items -->
+        {% for pet_type, pet in pet_types.items %}
+            <li class="mb-2">
+                <strong>{{ pet_type }}</strong>
+                <div>
+                    {{ pet.traits }}
+                </div>
+            </li>
+        {% endfor %}
+
+    </ul>
+</section>
+    </main>
+
+</body>
+</html>

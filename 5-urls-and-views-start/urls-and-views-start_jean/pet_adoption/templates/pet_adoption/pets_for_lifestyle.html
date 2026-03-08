@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets for Lifestyle</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-purple-600 text-white py-6 mb-8">
+        <h1 class="text-center text-4xl font-bold">Pets for Your Lifestyle</h1>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">
+            Pets that match a "{{ lifestyle_fit }}" lifestyle
+        </h2>
+
+        <section>
+            {% if matching_pets %}
+                <ul class="list-disc pl-5">
+                    {% for pet_key, pet in matching_pets.items %}
+                        <li class="mb-2">
+                            <strong>{{ pet.name }}</strong> — {{ pet.traits }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-lg">
+                    Sorry, no pets match this lifestyle.
+                </p>
+            {% endif %}
+        </section>
+    </main>
+
+</body>
+</html>
