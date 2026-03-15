@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Software Company</title>
+
+    <!-- Optional: Simple styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+        }
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background: #3b82f6;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .border {
+            border: 1px solid #ccc;
+        }
+        .rounded {
+            border-radius: 6px;
+        }
+        .mt-4 { margin-top: 1.5rem; }
+        .mt-3 { margin-top: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-2 { margin-bottom: 0.75rem; }
+        .p-3 { padding: 1rem; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Software Company</h1>
+    </header>
+
+    <nav>
+        <a href="/clients/companies/">Companies</a>
+        <a href="/admin/">Admin</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

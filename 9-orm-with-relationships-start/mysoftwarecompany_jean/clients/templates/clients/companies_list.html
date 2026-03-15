@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Companies list</h1>
+
+    {% if companies %}
+        <ul class="list-unstyled mt-3">
+            {% for company in companies %}
+                <li class="mb-4 p-3 border rounded">
+                    <strong>{{ company.name }}</strong>
+
+                    <div>
+                        Email: {{ company.email }}
+                    </div>
+
+                    {% if company.description %}
+                        <p class="mt-2">
+                            {{ company.description }}
+                        </p>
+                    {% endif %}
+
+                    <p class="mb-1">
+                        Created at: {{ company.created_at }}
+                    </p>
+                    <p class="mb-2">
+                        Information Last updated: {{ company.updated_at }}
+                    </p>
+
+                    {# If you added website field #}
+                    {% if company.website %}
+                        <p>
+                            Website:
+                            <a href="{{ company.website }}" target="_blank">
+                                {{ company.website }}
+                            </a>
+                        </p>
+                    {% endif %}
+
+                    {# If you added Employee model with related_name="employees" #}
+                    <h5 class="mt-3">Employees:</h5>
+                    <ul>
+                        {% for employee in company.employees.all %}
+                            <li>
+                                {{ employee.first_name }} {{ employee.last_name }} — {{ employee.position }}
+                            </li>
+                        {% empty %}
+                            <li>No employees listed.</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No companies found.</p>
+    {% endif %}
+</div>
+{% endblock %}
