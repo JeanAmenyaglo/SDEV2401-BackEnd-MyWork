@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Software Company</title>
+</head>
+
+<body>
+    <nav style="margin-bottom: 20px;">
+        <a href="{% url 'list_companies' %}">Home</a> |
+        <a href="{% url 'create_company' %}">Create Company</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

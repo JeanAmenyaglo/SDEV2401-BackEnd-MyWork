@@ -1,0 +1,14 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<h1>List of Companies</h1>
+
+<ul>
+    {% for company in companies %}
+        <li>{{ company.name }} — {{ company.email }}</li>
+    {% empty %}
+        <li>No companies yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+
+    <h1 class="text-3xl font-bold underline">{{ company.name }}</h1>
+
+    <p class="mt-2"><strong>Email:</strong> {{ company.email }}</p>
+    <p class="mt-2"><strong>Description:</strong> {{ company.description }}</p>
+
+    <div class="mt-4">
+        <a href="{% url 'update_company' company.id %}" class="text-blue-600 underline">
+            Update Company
+        </a>
+    </div>
+
+    <hr class="my-6">
+
+    <h2 class="text-2xl font-bold">Employees</h2>
+
+    {% if employees %}
+        <ul class="mt-4">
+            {% for employee in employees %}
+                <li>{{ employee.first_name }} {{ employee.last_name }} — {{ employee.role }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="mt-4 text-gray-600">No employees yet.</p>
+    {% endif %}
+
+    <div class="mt-6">
+        <a href="{% url 'add_employee' company.id %}" class="text-green-600 underline">
+            Add Employee
+        </a>
+    </div>
+
+</div>
+{% endblock %}
