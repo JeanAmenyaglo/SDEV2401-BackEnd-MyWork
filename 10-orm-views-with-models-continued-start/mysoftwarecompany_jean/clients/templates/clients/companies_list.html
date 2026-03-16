@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold underline">
+        {{ company.name }}
+    </h1>
+
+    <section>
+        <h2 class="text-2xl font-semibold mt-4">
+            About {{ company.name }}
+        </h2>
+        <p class="text-gray-700">
+            {{ company.description }}
+        </p>
+    </section>
+
+    <section class="mt-6">
+        <h2 class="text-2xl font-semibold">Employees</h2>
+        <ul class="list-disc pl-5">
+            {% for employee in company.employees.all %}
+                <li>
+                    {{ employee.first_name }} {{ employee.last_name }}
+
+                    {% if employee.role %}
+                        <span class="text-gray-600 font-bold">({{ employee.role.name }})</span>
+                    {% else %}
+                        <span class="text-gray-600 font-bold">(role unknown)</span>
+                    {% endif %}
+
+                    <span class="text-gray-500">({{ employee.email }})</span>
+                </li>
+            {% empty %}
+                <li>No employees found.</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endblock %}
