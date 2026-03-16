@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold underline">Company Details</h1>
+
+    <div class="mt-4 p-4 bg-white shadow rounded">
+        <p><strong>Name:</strong> {{ company.name }}</p>
+        <p><strong>Email:</strong> {{ company.email }}</p>
+        <p><strong>Website:</strong> {{ company.website }}</p>
+        <p><strong>Description:</strong> {{ company.description }}</p>
+        <p><strong>Phone:</strong> {{ company.phone_number }}</p>
+        <p class="text-sm text-gray-500 mt-2">
+            Created at: {{ company.created_at }} | Updated at: {{ company.updated_at }}
+        </p>
+    </div>
+</div>
+{% endblock %}
