@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Create Announcement</h1>
+
+<div class="max-w-lg bg-white p-6 rounded-lg shadow">
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit"
+            class="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700">
+            Create Announcement
+        </button>
+    </form>
+</div>
+{% endblock %}

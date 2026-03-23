@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Announcements</h1>
+
+{% if announcements %}
+    <div class="space-y-4">
+        {% for announcement in announcements %}
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h2 class="text-xl font-semibold">{{ announcement.title }}</h2>
+                <p class="text-gray-700 mt-2">{{ announcement.message }}</p>
+
+                <p class="text-sm text-gray-500 mt-3">
+                    Posted by {{ announcement.created_by.username }}
+                    on {{ announcement.created_at|date:"M d, Y H:i" }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p class="text-gray-600">No announcements yet.</p>
+{% endif %}
+{% endblock %}
