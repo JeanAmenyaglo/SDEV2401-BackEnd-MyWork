@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements App</title>
+
+    <!-- Tailwind CDN (used in the lab templates) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    {% block header %}
+    <nav class="bg-gray-800 p-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+
+            <!-- App Title -->
+            <a href="/announcements/" class="text-white text-lg font-semibold">
+                Announcements App
+            </a>
+
+            <!-- Authentication Links -->
+            {% if user.is_authenticated %}
+            <div class="flex items-center space-x-4">
+
+                <span class="text-gray-300">
+                    Hello, {{ user.username }}, {{ user.role }}
+                </span>
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit"
+                        class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700">
+                        Logout
+                    </button>
+                </form>
+
+            </div>
+
+            {% else %}
+            <div class="flex items-center space-x-4">
+
+                <a href="{% url 'login' %}"
+                    class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+                    Login
+                </a>
+
+                <a href="{% url 'register' %}"
+                    class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+                    Register
+                </a>
+
+            </div>
+            {% endif %}
+
+            {% if user.role == "teacher" %}
+            <a href="{% url 'create_announcement' %}"
+                class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                Create Announcement
+            </a>
+            {% endif %}
+
+        </div>
+    </nav>
+    {% endblock %}
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto mt-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+
+</html>
